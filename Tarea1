@@ -1,0 +1,129 @@
+# E J E R C I C I O S   A N A L ? S I S    D E   R E G R E S I ? N
+# EQUIPO:
+# Becerril Garc?a Bonifacio
+# Moreno Rojas Mariela
+# N?jera L?pez Karen
+# Rocha Sanch?z Mayra
+
+#### 1.- GENERAR VECTORES
+#A
+c(1:15)
+#B
+c(15:1)
+#C
+c(1:15,15:1)
+#D
+tiempo<-c(2,7,8)
+      # de otra manera
+ti<- data.frame(TIEMPO=c(2,7,8))
+ti
+#E
+a<-c(1,7,9)
+rep(a,7)
+#F
+c<-c(rep(9,15),rep(3,9))
+c
+#G
+b<-c(rep(7,12),rep(0,25),rep(5,35))
+b
+
+# E J E R C I C I O  2
+#A
+set.seed(50)
+# set.seed  acompa?ado de la declaracion del vector permite que-
+#sin importar el numero de veces que corramos el vector cada que lo hagamos-
+#acompa?ado de set.seed nos arrojara la misma base.
+
+vector1<-sample(0:999,250,replace = T)
+vector1
+vector2<-sample(0:999,250,replace = T)
+#sample te da una seleccion de numeros aleatorios en este caso 250 del 
+#conjunto de numeros entre 0 y 999, replace afirma que si se pueden repetir
+#los datos.
+
+
+# M A T R I C E S 
+
+#genera una matriz de 3 filas por 3 columnas
+d<-c(1,5,-2,1,2,-1,3,6,3)
+dim(d)<-c(3,3) 
+View(d)
+     # de otra manera
+matz<- matrix(c(1,5,-2,1,2,-1,3,6,3),3,3)
+matz
+
+#remplaza la primera columna y agrega los datos de la suma 
+#de la segunda y tercera columna
+d[,1]<-d[,2]+d[,3] 
+d
+    # de otra manera 
+col2<- c(1,2,-1)
+col3<- c(3,6,3)
+col1<- c(col2+col3)
+col1
+matz1<- matrix(c(col1,col2,col3),3,3)
+matz1
+
+
+# E J E R C I C I O 2
+#matriz de 8 por 9 de valores aleatorios enteros entre 0 y 9
+f<-matrix(sample(0:9,72,replace=T),nrow =8 ,ncol = 9)
+f
+    # de otra forma
+numeros<-sample(0:9, 72, replace=T)
+otramatz<- matrix(c(numeros),8 ,9)
+otramatz 
+#A
+f==1
+f[f==1]
+
+#B
+f[1,3]
+otramatz [1,3]
+
+#C
+g<-matrix(1:25,nrow =5 ,ncol = 5)
+g
+    # otra forma 
+nb<- sample(0:80, 10, replace = T)
+nrbr<- matrix(c(nb) , nrow = 5, byrow = 2)
+nrbr
+#D
+f[,7]
+otramatz [,7]
+#E
+l<-colSums(f,F)
+l
+nuevo<-rowSums(f,F)
+nuevo
+#F
+s<-matrix(sample(10:1000,20),nrow = 4,ncol = 5)
+s
+mean(s[,5])
+var(s[2,])
+rowMeans(s)
+colMeans(s)
+####de la matriz s la columna 1 y el renglon 4 tienen la media mas alta
+     #otro ejemplo 
+ns<-sample(0:20, 20, replace=T)
+ns
+s<- matrix(c(ns),4 ,5)
+s  
+mean(s[,5])
+var(s[2,])
+rowMeans(s)
+colMeans(s)
+   # se puede notar que el renglon 1 y la comlumna 5 tienen la media mas alta  
+
+#G
+#columna con valores de 1 a matriz f 
+f<-cbind(f,c(1,1,1,1,1,1,1,1))
+f
+    # a la matriz otramatz
+agrega<-cbind(otramatz,c(1,1,1,1,1,1,1,1))
+agrega
+
+#H
+#renglon con valores de 0 a matriz s
+s<-rbind(s,c(0,0,0,0,0))
+s
